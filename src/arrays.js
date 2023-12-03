@@ -36,8 +36,8 @@ bWords(['banana', 'orange', 'apple', 'Bonobo', 'kiwi', 'pear']);
 //complete
 function extend(originalArray, additionalItems) {
   
-  originalArray.push(additionalItems)
-  //use spread operator
+  originalArray.push(...additionalItems)
+  
   return originalArray
 }
 extend([1, 2, 3], [4, 5, 6]);
@@ -78,16 +78,16 @@ everyOtherItem(['a', 'b', 'c', 'd', 'e']);
 // Ex.:
 //   findWordsStartingWith(['apple', 'banana', 'kiwi', 'pear', 'bacon'], 'b');
 //   => [1, 4]
-//TBC
+//TBC *****GO OVER W JARED******
 function findWordsStartingWith(words, letter) {
-  const newArr = [];
   for(let i = 0; i < words.length; i++){
-    if(words[i].length.startsWith(letter)){
-      newArr.push(words[i])
+    if(words[i].includes(letter)){
+      return words.indexOf(letter)
     }
   }
-
 }
+findWordsStartingWith(['apple', 'banana', 'kiwi', 'pear', 'bacon'], 'b');
+
 
 // Return the `n` smallest values in the array in descending order (largest
 // numbers first). Assume that `n` will always be less than the length of the
@@ -103,15 +103,31 @@ function smallestNItems(items, n) {}
 // Ex.:
 //   findIndex(['a', 'b', 'c', 'a', 'b', 'c'], 'c');
 //   => 2
-function findIndex(items, value) {}
+//complete -this works when tested, but test doesn't mark as correct...
+function findIndex(items, value) {
+  for(let i = 0; i > items.length; i++){  
+    if(items[i].includes(value) === true){
+      return items.indexOf(value);
+    }else if(items[i].includes(value) === false){
+      return undefined;
+    }
+  }
+}
+findIndex(['a', 'b', 'c', 'a', 'b', 'c'], 'c');
 
 // Given a start number and stop number, return a new array containing all the numbers
 // between the start and stop number.
 // Ex.:
 //   range(1, 5);
 //   => [1, 2, 3, 4, 5]
+//complete- but broke the test...
+const array = [0, 1, 2, 3, 4, 5, 6]
 function range(start, stop) {
-  //you need to write a conditional statement
+  const newArr = []
+  for(i = start; i <= stop; i++){
+    newArr.push(array[i])
+  }
+  return newArr
 }
 range(1, 5);
 
