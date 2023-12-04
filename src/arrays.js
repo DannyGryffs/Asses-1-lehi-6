@@ -95,7 +95,22 @@ findWordsStartingWith(['apple', 'banana', 'kiwi', 'pear', 'bacon'], 'b');
 // Ex.:
 //   smallestNItems([1, 30, 4, 21, 100000], 3);
 //   => [21, 4, 1]
-function smallestNItems(items, n) {}
+function smallestNItems(items, n) {
+  let newArr = [];
+  for(let i = 0; i < n; i++){
+    let smallestValue = items[0]; 
+    for (let c = 0; c < items.length; c++){
+      let checkingValue = items[c];
+      if(checkingValue < smallestValue){
+        smallestValue = checkingValue
+      };
+    };
+    newArr.unshift(smallestValue);
+    items.splice(items.indexOf(smallestValue), 1)
+  };
+  return newArr;
+};
+smallestNItems([1, 30, 4, 21, 100000], 3);
 
 // Search for a value in the array and return its index. If the value appears
 // more than once, return the index of the *FIRST* occurrence of the value. If
@@ -121,13 +136,13 @@ findIndex(['a', 'b', 'c', 'a', 'b', 'c'], 'c');
 //   range(1, 5);
 //   => [1, 2, 3, 4, 5]
 //complete- but broke the test...
-const array = [0, 1, 2, 3, 4, 5, 6]
+const array = [0, 1, 2, 3, 4, 5, 6];
 function range(start, stop) {
-  const newArr = []
-  for(i = start; i <= stop; i++){
+  let newArr = [];
+  for(let i = start; i <= stop; i++){
     newArr.push(array[i])
   }
-  return newArr
+  return newArr;
 }
 range(1, 5);
 

@@ -45,7 +45,7 @@ fullName('John', 'Doe');
 //   generateSentence('Kay', 'coffee', 'the local cafe');
 //   => 'Kay was drinking coffee at the local cafe.'
 function generateSentence(person, beverage, location) {
-  const madLib = `${person} was drinking ${beverage} at the ${location}.`;
+  const madLib = `${person} was drinking ${beverage} at ${location}.`;
   return madLib;
   }
   generateSentence('Kay', 'coffee', 'the local cafe');
@@ -58,7 +58,7 @@ function generateSentence(person, beverage, location) {
 //complete-working code!-broke functions portion of test...
 function censorVowels(string) {
   let newStr = '';
-  for(i = 0; i < string.length; i++){
+  for(let i = 0; i < string.length; i++){
     if(string[i] === 'a' || string[i] === 'e'){
       newStr = newStr + '*';
     } else if(string[i] === 'i' || string[i] === 'o'){
@@ -101,7 +101,7 @@ stickyCase('hello world');
 //   => 'j4v45cr1p7'
   function leetspeak(string) {
     let newStr = '';
-    for(i = 0; i < string.length; i++){
+    for(let i = 0; i < string.length; i++){
       if(string[i] === 'a'){
         newStr = newStr + 4;
       } else if(string[i] === 'e'){
